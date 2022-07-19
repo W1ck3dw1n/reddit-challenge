@@ -1,0 +1,322 @@
+*{
+padding: 0;
+margin: 0;
+background: #DAE0E6;
+}
+
+
+main{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 0 10%;
+
+}
+
+a{
+    background: #FFF;
+    background-color: #FFF;
+    padding: 2px;
+    }
+
+nav div{
+    background: #FFF;
+}
+    
+/*primera sección*/
+
+.topnav{
+    background-color: white;
+    height: 48px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 100px 0px 0px;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    align-items: left;
+    
+}
+
+.icon{
+    height:32px;
+    background-color: white;
+    padding: 2px 0;
+
+}
+
+.input-container{
+    padding: 0px 0px 0px 120px;
+    border-radius: 4px;
+}
+
+.input-container i{
+position: absolute;
+margin-left: 12px;
+background: white;
+margin-top: 10px;
+color:FFFFFF;
+}
+
+
+.search{
+    background-color: rgb(243, 243, 243);
+    width: 550px;
+    padding: 10px 50px;
+    border-color: rgb(240, 236, 236);
+    border-radius: 4px;
+    border:1px solid rgb(241, 236, 236);            
+}
+
+.buscador:hover{
+    border-color: blue;
+    background-color:white;
+}
+
+.sesion{
+border:1px solid blue;
+border-radius: 12px;
+background: #FFF;
+color: blue;
+font-weight: bold;
+padding: 4px 6px; 
+width: 100px;
+height: 40px;
+margin-left: 200px;
+}
+
+.sesion:hover{
+    background-color: #dad9f1;
+    opacity: 50%;
+}
+
+.registro{
+    border:1px solid blue;
+    border-radius: 12px;
+    background: #FFF;
+    color: blue;
+    font-weight: bold;
+    padding: 12px 10px; 
+    margin-right: 30px; 
+}
+
+.registro:hover{
+    opacity: 70%;
+}
+
+/*segunda sección*/
+
+.language-notification{
+    width:100%;
+    height: 52px;
+    background: white;
+    text-align: center;
+    justify-content: space-between;
+    margin:20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    }
+
+.fa-times{
+    position: absolute;
+    right:20px;
+    cursor:pointer;
+}
+
+.fa{
+    background: #FFF;
+    color: gray;
+    margin-right:2px;
+}
+
+.trending-today{
+    width:100%;
+    height:220px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.news-container{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.news{
+    height:100%;
+    width: 190px;
+    background-image: url("/challenge/challenge/images.jpg");
+    background-size: 190px 200px;
+    border-radius: 8px;
+}
+
+/*Tercera sección*/
+
+#popular{
+    text-align:left;
+    margin-right:auto;
+}
+
+.trending{
+    width:100%;
+    height:100%;   
+    display:flex;
+    justify-content: wrap;
+    background: gray;
+}
+
+.trending-posts{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.fa-ellipsis{
+    cursor:pointer
+}
+
+/*izquierda*/
+
+/*
+
+                <div class="post">
+                    <div class="votes"></div>
+                    <div class="origin"></div>
+                    <div class="title"></div>
+                    <div class="hyperlink"></div>
+                    <div class="thumbnail"></div>
+                    <div class="actions"></div>
+                </div>
+*/
+
+.post{
+    display: flex;
+    flex-direction: row;
+    justify-content: wrap;
+    width:100%;
+    height:500px;
+    background: white;
+    text-align: center;
+    margin: 10px;
+    border-radius: 20px;
+
+}
+
+.post-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.votes{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 100%;
+    background-color: gray;
+}
+
+.votes:hover{
+    opacity: 50%;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.origin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: yellow;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: red;
+}
+
+.hypelink{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: purple;
+}
+
+
+.thumbnail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: green;
+}
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: black;
+}
+
+/*Derecha*/
+
+.right-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight-filters-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:100px;
+    width:100%;
+    background: #FFF;
+}
+
+.highlight-filter{
+    width:140px;
+    height: 30px;
+    border-radius: 2px;
+    background: white;
+}
+
+.highlight-filter:hover{
+    background-color: gray;
+    opacity: 50%;
+}
+
+.trending-communities{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    width: 150px;
+    height: 150px;
+    background:white;
+}
+
+.reddit-premium{
+    height: 250px;
+    width:250px;
+    background:white;
+    margin: 10px;
+}
+
+  
