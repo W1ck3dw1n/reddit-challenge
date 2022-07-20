@@ -28,20 +28,19 @@
         </div>
 
         <div class="session">
-            <button class="der login">Iniciar
+            <button onclick="onClickLogin()" class="der login">Iniciar
                 <br> sesión</button>
             <button class="der registro">Registrarse</button>
             <i class="der fa fa-user-o" aria-hidden="true"></i>
-            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-chevron-down"  ></i>
         </div>
     </nav>
 
     <main>
         <section class="language-notification">¿Estás navegando en español? Échale un vistazo a
             <a href="https://www.reddit.com/es"> reddit.com/es</a>
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true" onclick="hideNotification()" ></i>
         </section>
-
 
         <section class="trending-today">
             <h4>
@@ -181,10 +180,15 @@
                 </div>
             </div>
         </section>
-
-
     </main>
 
+    <section id="modal">
+        <i id="close-modal" class="fa fa-times"></i>
+    </section>
+
+
+
 </body>
+<script type="text/javascript" src="./main.js"></script>
 
 </html>
