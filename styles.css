@@ -2,6 +2,8 @@
 padding: 0;
 margin: 0;
 background: #DAE0E6;
+font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -9,51 +11,61 @@ main{
     display:flex;
     flex-direction:column;
     align-items: center;
-    padding: 0 10%;
-
+    padding: 48px 13%;
+    
 }
 
 a{
     background: #FFF;
-    background-color: #FFF;
-    padding: 2px;
     }
 
 nav div{
     background: #FFF;
 }
+
+h4{
+    align-content: center;
+}
     
 /*primera sección*/
 
 .topnav{
+    position:fixed;
+    z-index: 99;
     background-color: white;
+    width: 100%;
     height: 48px;
     list-style-type: none;
     margin: 0;
-    padding: 0px 100px 0px 0px;
+    padding: 0px 20px;
     display: flex;
-    justify-content: center; 
-    flex-wrap: wrap;
-    align-items: left;
-    
+    justify-content: space-around; 
+    align-items: center;
+}
+
+/*div boton icono y buscador*/
+
+.home-search{
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .icon{
     height:32px;
     background-color: white;
-    padding: 2px 0;
-
+    align-content: center;
 }
 
 .input-container{
     padding: 0px 0px 0px 120px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .input-container i{
 position: absolute;
 margin-left: 12px;
-background: white;
+background: transparent;
 margin-top: 10px;
 color:FFFFFF;
 }
@@ -63,6 +75,7 @@ color:FFFFFF;
     background-color: rgb(243, 243, 243);
     width: 550px;
     padding: 10px 50px;
+    margin: 5px 0 0 0;
     border-color: rgb(240, 236, 236);
     border-radius: 4px;
     border:1px solid rgb(241, 236, 236);            
@@ -73,42 +86,59 @@ color:FFFFFF;
     background-color:white;
 }
 
-.sesion{
+/*div funciones sesión*/
+
+.session{
+    display: flex;
+    align-content: space-between;
+    padding:0px 35px;
+}
+
+.login{
 border:1px solid blue;
-border-radius: 12px;
+border-radius: 32px;
 background: #FFF;
 color: blue;
 font-weight: bold;
-padding: 4px 6px; 
-width: 100px;
+margin-right: 20px;
+width: 120px;
 height: 40px;
-margin-left: 200px;
 }
 
-.sesion:hover{
+.login:hover{
     background-color: #dad9f1;
     opacity: 50%;
 }
 
 .registro{
     border:1px solid blue;
-    border-radius: 12px;
-    background: #FFF;
-    color: blue;
+    border-radius: 22px;
+    background: blue;
+    color: white;
     font-weight: bold;
-    padding: 12px 10px; 
+    margin-top:5px;
     margin-right: 30px; 
+    height: 30px;
+    width: 120px;
 }
 
 .registro:hover{
     opacity: 70%;
 }
 
+.fa-user-o{
+    margin-top:10px;
+}
+
+.fa-chevron-down{
+    margin-top:10px;
+}
+
 /*segunda sección*/
 
 .language-notification{
     width:100%;
-    height: 52px;
+    height: 50px;
     background: white;
     text-align: center;
     justify-content: space-between;
@@ -117,6 +147,8 @@ margin-left: 200px;
     align-items: center;
     justify-content: center;
     position: relative;
+    border-radius: 4px;
+    border: 1px gray;
     }
 
 .fa-times{
@@ -133,11 +165,11 @@ margin-left: 200px;
 
 .trending-today{
     width:100%;
-    height:220px;
+    height:240px;
     background: black;
     display: flex;
     flex-direction: column;
-
+    
 }
 
 .news-container{
@@ -146,21 +178,63 @@ margin-left: 200px;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
+    padding:0 0 10px 0;
+
 }
 
 .news{
-    height:100%;
-    width: 190px;
-    background-image: url("/challenge/challenge/images.jpg");
-    background-size: 190px 200px;
+    height:180px;
+    width: 240px;
+    background-image: url("/challenge/images.jpg");
+    background-size: 100% 100%;
     border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace white;
+    position: relative;
+    top: 10px;
+    
+}
+
+.news h4{
+    display: flex;
+    position:absolute;
+    background: transparent;
+    bottom:70px;
+    left: 10px;
+    font-size: 20px;
+    font-stretch: expanded;
+    color:white;
+}
+
+.news h6{
+    display: flex;
+    position:absolute;
+    background: transparent;
+    bottom:35px;
+    left: 12px;
+    font-size: 14px;
+    color:white;
+}
+
+.news a{
+    display: flex;
+    position:absolute;
+    background: transparent;
+    bottom:15px;
+    left: 12px;
+    font-size: 14px;
+    color:green;
 }
 
 /*Tercera sección*/
 
+
+/*izquierda*/
+
 #popular{
     text-align:left;
     margin-right:auto;
+    margin-left: 10px;
+
 }
 
 .trending{
@@ -168,11 +242,11 @@ margin-left: 200px;
     height:100%;   
     display:flex;
     justify-content: wrap;
-    background: gray;
+    background: black;
 }
 
 .trending-posts{
-    width:70%;
+    width:66%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -180,22 +254,11 @@ margin-left: 200px;
 }
 
 .fa-ellipsis{
-    cursor:pointer
+    width:10%;
+    height: 30px;
+    border-radius: 20px;
+    background: transparent;
 }
-
-/*izquierda*/
-
-/*
-
-                <div class="post">
-                    <div class="votes"></div>
-                    <div class="origin"></div>
-                    <div class="title"></div>
-                    <div class="hyperlink"></div>
-                    <div class="thumbnail"></div>
-                    <div class="actions"></div>
-                </div>
-*/
 
 .post{
     display: flex;
@@ -205,57 +268,62 @@ margin-left: 200px;
     height:500px;
     background: white;
     text-align: center;
-    margin: 10px;
-    border-radius: 20px;
-
+    margin: 20px 0px;
+    border:1px solid gray;
+    border-radius: 2px;
+    
 }
 
-.post-info-container{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+.post:hover{
+    border-color: black;
+    
 }
 
 .votes{
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 6%;
     height: 100%;
-    background-color: gray;
+    background-color: #F8F9FA;
 }
 
 .votes:hover{
     opacity: 50%;
 }
 
-.vertical{
+.post-info-container{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height:100%;
 }
-
 
 .origin{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background-color: yellow;
+    height: 5%;
+    background-color: white;
 }
 
 .title{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background-color: red;
+    height: 5%;
+    background-color: white;
 }
 
-.hypelink{
+.hyperlink{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background-color: purple;
+    height: 5%;
+    background-color: white;
+}
+
+.hyperlink:hover{
+    opacity: 50%;
 }
 
 
@@ -263,39 +331,43 @@ margin-left: 200px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background-color: green;
+    height: 85%;
+    background-image: url("/challenge/oraq.jpg");
+    background-size: 50% 100%;
 }
 
 .actions{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background-color: black;
-}
-
-/*Derecha*/
-
-.right-section{
-    display: flex;
-    flex-direction: column;
+    height: 5%;
+    background-color: white;
 }
 
 .highlight-filters-section{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height:100px;
+    height:60px;
     width:100%;
     background: #FFF;
+    border-radius: 4px;
 }
 
 .highlight-filter{
-    width:140px;
+    width:10%;
     height: 30px;
-    border-radius: 2px;
+    border-radius: 20px;
+    border-color: transparent;
+    align-items: center;
     background: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-angle-down{
+    display: flex;
+    
 }
 
 .highlight-filter:hover{
@@ -303,20 +375,90 @@ margin-left: 200px;
     opacity: 50%;
 }
 
-.trending-communities{
+/*Derecha*/
+
+.right-section{
     display: flex;
-    justify-content: center;
-    margin:10px;
-    width: 150px;
-    height: 150px;
-    background:white;
+    flex-direction: column;
+    width: 35%;
 }
 
-.reddit-premium{
-    height: 250px;
-    width:250px;
+.trending-communities{
+    display: flex;
+    flex-direction: column;
+    margin:10px 10px 10px 20px;
+    width: 90%;
+    height: 410px;
     background:white;
-    margin: 10px;
+    position: relative;
+}
+
+/*
+     <div class="trending-communities">
+                    <div class="top-community"></div>
+                    <div class="top-ranked"></div>
+                    <div class="view-all"></div>
+                    <div class="trending-communities-filters"></div>
+                </div>
+*/
+.top-ranked{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:210px;
+    background:yellow;
+    position: relative;
+}
+
+.top-community{
+    height:80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: black;
+}
+
+.top-communities{
+    height:80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+    background: yellow;
+}
+
+.top-community h4{
+    display: flex;
+    top: 35px;
+    left: 15px;
+    position: absolute;
+    background: transparent;
+    color: white;
+}
+
+.top-community h6{
+    display: flex;
+    top: 55px;
+    left: 20px;
+    font-size: 16px;
+    position: absolute;
+    background: transparent;
+    color: white;
+}
+
+.view-all{
+    width: 100%;
+    height:30px;
+    background: green;
+}
+
+
+.reddit-premium{
+    width: 90%;
+    height: 100px;
+    margin:10px 10px 10px 20px;
+    background:white;
 }
 
   
