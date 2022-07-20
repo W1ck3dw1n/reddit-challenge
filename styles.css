@@ -334,7 +334,7 @@ height: 40px;
     flex-direction: column;
     width: 100%;
     height: 85%;
-    background-image: url("./oraq.jpg");
+    /* background-image: url("./oraq.jpg"); */
     background-size: 50% 100%;
 }
 
@@ -474,6 +474,7 @@ height: 40px;
     background: #fff;
     border-radius: 12px;
     align-content: center;
+    right: 25%;
 }
   
 #close-modal{
