@@ -143,7 +143,7 @@ const printInfoOfRickAndMorty = async () => {
 
 const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
-   for(let i = 0; i <= randomImage.length; i++){
+   for(let i = 0; i <= randomImage.length-1; i++){
      randomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
      console.log(i)
    }
@@ -153,18 +153,10 @@ const changeBackground = () => {
   )[0];
 }
 
-const topOfAll = () => {
-  const arandomImage = document.getElementsByClassName("top-community")
-   for(let i = 0; i <= 2; i++){
-     arandomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
-     console.log(i)
-   }
+const onClickFilter = (event) =>{
+  console.log(event)
 
-  const anotification = document.getElementsByClassName(
-    "language-notification"
-  )[0];
 }
-
 
 // TODO -> Sacar información de otra API y pintarlo en el segundo post.
 
@@ -172,4 +164,3 @@ const topOfAll = () => {
 printInfoOfMrRobot();
 printInfoOfRickAndMorty();
 changeBackground();
-topOfAll();

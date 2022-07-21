@@ -83,23 +83,23 @@
 
             <div class="trending-posts">
                 <div class="highlight-filters-section">
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa fa-reddit" aria-hidden="true"></i>
                         Destacando</button>
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                         México</button>
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
 
                         <i class="fa fa-life-ring" aria-hidden="true"></i>
                         Más nuevos</button>
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa fa-arrow-up" aria-hidden="true"></i>
                         Más votados</button>
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa-solid fa-ellipsis">...</i>
                     </button>
-                    <button class="highlight-filter">
+                    <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa fa-film" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -196,10 +196,14 @@
                 </div>
 
                 <div class="reddit-premium">
-                    <div>
+                    <div class="premium-elements">
+                     <div>
                         <i class="fa fa-shield" aria-hidden="true"></i>
+                        <div>
                         <h4>Reddit premium</h4>
                         <h6>La mejor experiencia de Reddit, con monedas mensuales</h6>
+                        </div>
+                     </div>  
                         <button>Pruébalo ahora</button>
 
                     </div>
@@ -208,7 +212,7 @@
                 </div>
 
                 <div class="various-communities">
-                    <div><button>Comunidades populares</button></div>
+                    <button>Comunidades populares</button>
                     <button>Videojuegos</button>
                     <button>Deportes</button>
                     <button>Television</button>
