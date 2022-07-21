@@ -529,14 +529,30 @@ height: 40px;
     width: 90%;
     height: 100px;
     margin:10px 10px 10px 20px;
-    background:white;
     display: flex;
     position: relative;
 }
 
-.premium-elements{
-    position: absolute;
+.premium-elements {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.premium-elements div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background: transparent;
+}
+
+.premium-elements div div{
+    margin-left: 12px;
+    flex-direction: column;
+    align-items: revert;
+}
+
+.premium-elements div h4{
+    margin-bottom: 4px;
 }
 
 .premium-elements h4{
@@ -555,11 +571,11 @@ height: 40px;
     background: #FF4500;
     border-radius: 40px;
     border-color: transparent;
-    bottom:0;
+    bottom: 6px;
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 100%;
+    width: 95%;
     height: 35px;
 }
 
