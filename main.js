@@ -37,7 +37,20 @@ const closeModal = () => {
   const main = document.getElementsByTagName("main")[0];
   //ocultar modal
   modal.style.display = "none";
-  main.style.opacity = "1"; //creo que tiene que ver con el scope v:
+  main.style.opacity = "1"; 
+};
+
+// TODO estudiar el then y catch :v segunda opcion, luego fue try y catch
+const getMrRobotSeasons2 = () => {
+  const result = fetch("https://mr-robot-express-api.herokuapp.com/seasons")
+    .then((response) => {
+      response.json().then((result) => {
+        console.log(result);
+      });
+    })
+    .catch((error) => console.log(error));
+
+  return result;
 };
 
 const getDataFromApi = async (api) => {
@@ -50,18 +63,6 @@ const getDataFromApi = async (api) => {
   }
 };
 
-// TODO estudiar el then y catch :v
-const getMrRobotSeasons2 = () => {
-  const result = fetch("https://mr-robot-express-api.herokuapp.com/seasons")
-    .then((response) => {
-      response.json().then((result) => {
-        console.log(result);
-      });
-    })
-    .catch((error) => console.log(error));
-
-  return result;
-};
 
 const printInfoOfMrRobot = async () => {
   const information = await getDataFromApi(
@@ -100,7 +101,49 @@ const printInfoOfMrRobot = async () => {
   divHyperLink.href = `${information[0].episodes.listSource}`;
 };
 
-// TODO -> Sacar información de otra API y pintarl en el segundo post.
+const printInfoOfRickAndMorty = async () => {
+  const information = await getDataFromApi(
+    "https://rickandmortyapi.com/api/episode"
+      );
+    const found = information.results.find((item)=>{ 
+        return item.id === 5})
+  
+  const post = document.getElementsByClassName("post-info-container")[1];
+
+  // Creando elementos y dandoles clases
+  const divOrigin = document.createElement("div");
+  divOrigin.className = "origin";
+  const divTitle = document.createElement("div");
+  divTitle.className = "title";
+  const divHyperLink = document.createElement("a");
+  divHyperLink.className = "hyperlink";
+  const subredditButton = document.createElement("button");
+  subredditButton.className = "subreddit";
+  const divThumbnail = document.createElement("div");
+  divThumbnail.className = "thumbnail";
+  const divActions = document.createElement("div");
+  divActions.className = "actions";
+  // FIn de creacion de elementos
+  // Insertar elementos dentro del elemento padre (post)
+  post.appendChild(divOrigin);
+  post.appendChild(divTitle);
+  post.appendChild(divHyperLink);
+  divHyperLink.appendChild(subredditButton);
+  post.appendChild(divThumbnail);
+  post.appendChild(divActions);
+
+  // Insertando texto dentro de los elementos
+  divOrigin.innerHTML = `${found.name}`; // string interpolation
+  divTitle.innerHTML = `${found.episode}`;
+  divThumbnail.style.backgroundImage = `url(https://as01.epimg.net/epik/imagenes/2019/01/03/portada/1546504221_002420_1546506356_noticia_normal_recorte1.jpg)`;
+  subredditButton.innerHTML = `Ver lista de episodios Rick & Morty`;
+  divHyperLink.target = "_blank";
+  divHyperLink.href = `${found.url}`;
+};
+
+
+// TODO -> Sacar información de otra API y pintarlo en el segundo post.
 
 isHiddenNotification();
 printInfoOfMrRobot();
+printInfoOfRickAndMorty();
