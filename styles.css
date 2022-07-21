@@ -79,7 +79,7 @@ color:FFFFFF;
     margin: 5px 0 0 0;
     border-color: rgb(240, 236, 236);
     border-radius: 4px;
-    border:1px solid rgb(241, 236, 236);            
+    border:.5px solid rgb(241, 236, 236);            
 }
 
 .buscador:hover{
@@ -187,7 +187,7 @@ height: 40px;
 .news{
     height:180px;
     width: 240px;
-    background-image: url("./images.jpg");
+    /*background-image: url("https://picsum.photos/200/300/?random=4"); */
     background-size: 100% 100%;
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace white;
@@ -225,6 +225,10 @@ height: 40px;
     left: 12px;
     font-size: 14px;
     color:green;
+}
+
+.news a h3{
+    background: transparent;
 }
 
 /*Tercera sección*/
@@ -271,7 +275,7 @@ height: 40px;
     background: white;
     text-align: center;
     margin: 20px 0px;
-    border:1px solid gray;
+    border:1px solid #CCCCCC;
     border-radius: 2px;
     
 }
@@ -363,7 +367,8 @@ height: 40px;
     border-color: transparent;
     align-items: center;
     justify-content: center;
-    background: #DAE0E6;
+    background: #96BEDB;
+    color: gray;
     display: flex;
     flex-direction: row;
 }
@@ -374,8 +379,9 @@ height: 40px;
 }
 
 .highlight-filter:hover{
-    background-color: gray;
+    background-color: #96BEDB ;
     opacity: 50%;
+    color: blue;
 }
 
 /*Derecha*/
@@ -409,7 +415,7 @@ height: 40px;
     flex-direction: column;
     width: 100%;
     height:210px;
-    background:yellow;
+    background:white;
     position: relative;
 }
 
@@ -418,6 +424,7 @@ height: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-size: 100% 100%;
     background: black;
 }
 
@@ -429,7 +436,28 @@ height: 40px;
     align-items: center;
     align-content: center;
     flex-direction: row;
-    background: yellow;
+    background: white;
+    border-color: black;
+    border-radius: 2px;
+}
+
+.top-communities button{
+    height:25px;
+    width: 70px;
+    left: 14px;;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    align-content: center;
+    background: #1484D7;
+    border-color: transparent;
+    border-radius: 40px;
+}
+
+.trending-communities.top-community.top-ranked.top-communities h6{
+    left:30px;  
 }
 
 .top-community h4{
@@ -453,8 +481,43 @@ height: 40px;
 
 .view-all{
     width: 100%;
-    height:30px;
-    background: green;
+    height:40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+}
+
+.view-all button{
+    height: 80%;
+    width: 92%;
+    border-radius: 40px;
+    border-color: transparent;
+    background: #1484D7;
+    color: white;
+    font-weight: bold;
+}
+
+.trending-communities-filters{
+    height: 80px;
+    width: 100%;
+    background: white;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.trending-communities-filters button{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 24px;
+    width: 80px;
+    background: #E3EDF6;
+    border-radius: 20px;
+    border-color: transparent;
+    align-content: center;
+    color: #248BD9;
+    font-weight: bold;
 }
 
 
@@ -463,7 +526,40 @@ height: 40px;
     height: 100px;
     margin:10px 10px 10px 20px;
     background:white;
+    display: flex;
+    position: relative;
 }
+
+.reddit-premium button{
+    display: flex;
+    position: absolute;
+    color:white;
+    background: #FF4500;
+}
+
+.various-communities{
+    width: 90%;
+    height: 288px;
+    background: white;
+    margin:10px 10px 10px 20px;
+    display: flex;
+    position: relative;
+
+}
+
+.various-communities button{
+    width: 100%;
+    height: 14%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+}
+
+
+
 
 #modal {
     display: none;

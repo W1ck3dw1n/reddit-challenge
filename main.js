@@ -53,10 +53,10 @@ const getMrRobotSeasons2 = () => {
   return result;
 };
 
-const getDataFromApi = async (api) => {
+const getDataFromApi = async (api) => {     //funcion recurrente
   try {
-    const response = await fetch(api);
-    const data = await response.json();
+      const response = await fetch(api);
+      const data = await response.json();
     return data;
   } catch (error) {
     console.log(error);
@@ -97,7 +97,7 @@ const printInfoOfMrRobot = async () => {
   divTitle.innerHTML = `${information[0].description}`;
   divThumbnail.style.backgroundImage = `url(${information[0].logo})`;
   subredditButton.innerHTML = `Ver lista de episodios`;
-  divHyperLink.target = "_blank";
+  divHyperLink.target = "_blank"; //este abre una pestaña nueva
   divHyperLink.href = `${information[0].episodes.listSource}`;
 };
 
@@ -141,9 +141,35 @@ const printInfoOfRickAndMorty = async () => {
   divHyperLink.href = `${found.url}`;
 };
 
+const changeBackground = () => {
+  const randomImage = document.getElementsByClassName("news")
+   for(let i = 0; i <= randomImage.length; i++){
+     randomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
+     console.log(i)
+   }
+
+  const notification = document.getElementsByClassName(
+    "language-notification"
+  )[0];
+}
+
+const topOfAll = () => {
+  const arandomImage = document.getElementsByClassName("top-community")
+   for(let i = 0; i <= 2; i++){
+     arandomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
+     console.log(i)
+   }
+
+  const anotification = document.getElementsByClassName(
+    "language-notification"
+  )[0];
+}
+
 
 // TODO -> Sacar información de otra API y pintarlo en el segundo post.
 
-isHiddenNotification();
+//isHiddenNotification();
 printInfoOfMrRobot();
 printInfoOfRickAndMorty();
+changeBackground();
+topOfAll();
