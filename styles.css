@@ -653,6 +653,7 @@ padding: 1px 0 1px;
 #modal {
     display: none;
     position: fixed;
+    justify-content: center;
     width: 850px;
     height: 650px;
     top: 180px;

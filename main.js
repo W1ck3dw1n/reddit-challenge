@@ -1,4 +1,4 @@
-const hideNotification = () => {
+const hideNotification = () => {      //ahista mi rama v:
   // llamar a elemento 'language-notification' del Dom
   const notification = document.getElementsByClassName(
     "language-notification"
