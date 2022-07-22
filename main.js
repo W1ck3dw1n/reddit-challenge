@@ -26,6 +26,11 @@ const onClickLogin = async () => {
   // llamar al elemento main
   const main = document.getElementsByTagName("main")[0];
   // dando estilos a elementos
+  
+  // llamar al elemento topnav
+  const nav = document.getElementsByTagName("nav")[0];
+
+  nav.style.opacity = "0.5";
   main.style.opacity = "0.5";
   modal.style.display = "block";
 };
@@ -33,11 +38,15 @@ const onClickLogin = async () => {
 const closeModal = () => {
   //llamar al elemento modal
   const modal = document.getElementById("modal");
-  // llamar al elemento body
+  // llamar al elemento main
   const main = document.getElementsByTagName("main")[0];
-  //ocultar modal
+  
+  const nav = document.getElementsByTagName("nav")[0];
+  
   modal.style.display = "none";
   main.style.opacity = "1"; 
+  nav.style.opacity = "1"; 
+  
 };
 
 // TODO estudiar el then y catch :v segunda opcion, luego fue try y catch
