@@ -194,7 +194,7 @@ padding: 1px 0 1px;
     flex-direction:row;
     justify-content: space-between;
     padding:0 0 10px 0;
-
+    
 }
 
 .news{
@@ -206,7 +206,7 @@ padding: 1px 0 1px;
     font-family: 'Courier New', Courier, monospace white;
     position: relative;
     top: 10px;
-    
+
 }
 
 .news h4{
