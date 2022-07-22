@@ -22,8 +22,10 @@
             </a>
 
             <div class="input-container">
-                <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="text" class="search" placeholder="Buscar en Reddit">
+                <div class="search-icon">
+                    <i class="fa fa-search" id="magn" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
 
@@ -44,7 +46,8 @@
 
         <section class="trending-today">
             <h4>
-                <br>En tendencia hoy</h4>
+                <br>En tendencia hoy
+            </h4>
             <div class="news-container">
                 <div class="news">
                     <h4>Titulo de artículo</h4>
@@ -83,19 +86,21 @@
 
             <div class="trending-posts">
                 <div class="highlight-filters-section">
-                    <button class="highlight-filter" onclick="onClickFilter(this)">
-                        <i class="fa fa-reddit" aria-hidden="true"></i>
-                        Destacando</button>
-                    <button class="highlight-filter" onclick="onClickFilter(this)">
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        México</button>
-                    <button class="highlight-filter" onclick="onClickFilter(this)">
+                    <div class="highlight-sorter">
+                        <button class="highlight-filter" onclick="onClickFilter(this)">
+                            <i class="fa fa-reddit" aria-hidden="true"></i>
+                            Destacando</button>
+                        <button class="highlight-filter" id="down" onclick="onClickFilter(this)">
+                            <i class="fa fa-angle-down"  aria-hidden="true"></i>
+                            México</button>
+                        <button class="highlight-filter" onclick="onClickFilter(this)">
 
-                        <i class="fa fa-life-ring" aria-hidden="true"></i>
-                        Más nuevos</button>
-                    <button class="highlight-filter" onclick="onClickFilter(this)">
-                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                        Más votados</button>
+                            <i class="fa fa-life-ring" aria-hidden="true"></i>
+                            Más nuevos</button>
+                        <button class="highlight-filter" onclick="onClickFilter(this)">
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                            Más votados</button>
+                    </div>
                     <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa-solid fa-ellipsis">...</i>
                     </button>
@@ -197,13 +202,13 @@
 
                 <div class="reddit-premium">
                     <div class="premium-elements">
-                     <div>
-                        <i class="fa fa-shield" aria-hidden="true"></i>
                         <div>
-                        <h4>Reddit premium</h4>
-                        <h6>La mejor experiencia de Reddit, con monedas mensuales</h6>
+                            <i class="fa fa-shield" aria-hidden="true"></i>
+                            <div>
+                                <h4>Reddit premium</h4>
+                                <h6>La mejor experiencia de Reddit, con monedas mensuales</h6>
+                            </div>
                         </div>
-                     </div>  
                         <button>Pruébalo ahora</button>
 
                     </div>
@@ -221,7 +226,7 @@
                     <button>Moda</button>
 
                 </div>
-            </div> 
+            </div>
         </section>
     </main>
 

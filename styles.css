@@ -3,14 +3,15 @@ padding: 0;
 margin: 0;
 background: #DAE0E6;
 font-family: 'Roboto', sans-serif;
-font-weight: bold;
+font-weight: bold;      /*en 1980X1080 se ve 20/20*/
 }
 
 main{
     display:flex;
     flex-direction:column;
     align-items: center;
-    padding: 48px 13%;
+    padding: 48px 15%; /*necesario aprender una mejor forma de manejar resolución, responsivo? v: */
+    width: 70%;    /*igual acá, en 1980x1080 según yo*/
 }
 
 a{
@@ -38,10 +39,8 @@ h4{
     width: 100%;
     height: 48px;
     list-style-type: none;
-    margin: 0;
-    padding: 0px 20px;
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -49,35 +48,39 @@ h4{
 
 .home-search{
     display: flex;
+    width: 50%;
     justify-content: space-between;
-
+    left: 10px;
 }
 
 .icon{
-    height:32px;
+    display: flex;
+    height: 33px;
     background-color: white;
-    align-content: center;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-top: 5px;
 }
 
 .input-container{
-    padding: 0px 0px 0px 120px;
+    margin: 2px 0px 2px 120px;
     border-radius: 2px;
+    
 }
 
-.input-container i{
-position: absolute;
-margin-left: 12px;
-background: transparent;
-margin-top: 10px;
-color:FFFFFF;
+#magn{
+    display: flex;
+    position: absolute;
 }
 
 
 .search{
-    background-color: rgb(243, 243, 243);
+    background-color: #f6f7f8;
     width: 550px;
-    padding: 10px 50px;
-    margin: 5px 0 0 0;
+    height: 30%;
+    padding: 12px 50px;
+    margin: 3px 0 0 90px;
+    position: relative;
     border-color: rgb(240, 236, 236);
     border-radius: 4px;
     border:.5px solid rgb(241, 236, 236);            
@@ -97,14 +100,17 @@ color:FFFFFF;
 }
 
 .login{
-border:1px solid blue;
+border:1px solid #1484D7;
 border-radius: 32px;
 background: #FFF;
-color: blue;
+color: #1484D7;
 font-weight: bold;
-margin-right: 20px;
+font-size: 14px;
+margin-top: 1px;
+margin-right: 18px;
 width: 120px;
-height: 40px;
+height: 41px;
+padding: 1px 0 1px;
 }
 
 .login:hover{
@@ -113,15 +119,18 @@ height: 40px;
 }
 
 .registro{
-    border:1px solid blue;
+    border:1px solid #1484D7;
     border-radius: 22px;
-    background: blue;
+    background: #1484D7;
+    align-content: center;
     color: white;
     font-weight: bold;
-    margin-top:5px;
-    margin-right: 30px; 
+    font-size: 16px;
+    margin-top: 4px;
+    margin-right: 24px; 
     height: 30px;
     width: 120px;
+    padding: 0 0 2px 0;
 }
 
 .registro:hover{
@@ -134,12 +143,13 @@ height: 40px;
 
 .fa-chevron-down{
     margin-top:10px;
+    margin-left: 4px;
 }
 
 /*segunda sección*/
 
 .language-notification{
-    width:100%;
+    width:95%;
     height: 50px;
     background: white;
     text-align: center;
@@ -149,7 +159,7 @@ height: 40px;
     align-items: center;
     justify-content: center;
     position: relative;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px gray;
     }
 
@@ -167,11 +177,13 @@ height: 40px;
 }
 
 .trending-today{
-    width:100%;
-    height:240px;
-    background: black;
+    width: 95%;
+    height: 240px;
+    background: transparent;
+    padding: 0 1px 12px 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     
 }
 
@@ -240,7 +252,7 @@ height: 40px;
 #popular{
     text-align:left;
     margin-right:auto;
-    margin-left: 10px;
+    margin-left: 28px;
 
 }
 
@@ -257,7 +269,7 @@ height: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 10px;
+    padding: 10px 10px 10px 28px;
 }
 
 .fa-ellipsis{
@@ -265,6 +277,7 @@ height: 40px;
     height: 30px;
     border-radius: 20px;
     background: transparent;
+
 }
 
 .post{
@@ -361,29 +374,55 @@ height: 40px;
     border-radius: 4px;
 }
 
+.highlight-sorter{
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+}
+
+.highlight-sorter .highlight-filter{
+    width:25%;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 20px;
+    border-color: transparent;
+    align-items: center;
+    justify-content: center;
+    background: #F6F7F8;
+    color: blue;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+
 .highlight-filter{
-    width:15%;
+    width: 5%;
     height: 30px;
     border-radius: 20px;
     border-color: transparent;
     align-items: center;
     justify-content: center;
-    background: #F6F7F8;
-    color: gray;
+    background: #E5E6E7;
+    color: blue;
+    font-weight: bold;
     display: flex;
     flex-direction: row;
 }
 
-.fa-angle-down{
+#down {
     display: flex;
-    
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15px;
 }
 
 .highlight-filter:hover{
-    background-color: gray;
+    background-color: #EDEDED;
     font-weight: bold;
-    font-size: 14px;
-    opacity: 50%;
+    opacity: 70%;
     color: blue;
 }
 
@@ -393,6 +432,7 @@ height: 40px;
     display: flex;
     flex-direction: column;
     width: 35%;
+    padding: 0 18px 0 0;
 }
 
 .trending-communities{
@@ -525,24 +565,31 @@ height: 40px;
 }
 
 
+
 .reddit-premium{
     width: 90%;
     height: 100px;
     margin:10px 10px 10px 20px;
     display: flex;
     position: relative;
-}
+    background: white;
+    }
 
 .premium-elements {
     padding: 8px;
     border-radius: 4px;
-}
+    background:white;
+    }
 
 .premium-elements div{
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: transparent;
+}
+
+.fa-shield{
+    color: #FF4500;
 }
 
 .premium-elements div div{
@@ -571,7 +618,7 @@ height: 40px;
     background: #FF4500;
     border-radius: 40px;
     border-color: transparent;
-    bottom: 6px;
+    bottom: 8px;
     justify-content: center;
     align-content: center;
     align-items: center;
