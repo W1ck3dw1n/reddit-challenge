@@ -20,6 +20,7 @@ a{
 
 button{
     cursor:pointer;
+    background: transparent;
 }
 
 nav div{
@@ -65,7 +66,7 @@ h4{
 .input-container{
     margin: 2px 0px 2px 120px;
     border-radius: 2px;
-    
+ 
 }
 
 #magn{
@@ -161,7 +162,8 @@ padding: 1px 0 1px;
     position: relative;
     border-radius: 2px;
     border: 1px gray;
-    }
+    font-size: 14px;
+}
 
 .fa-times{
     position: absolute;
@@ -283,7 +285,6 @@ padding: 1px 0 1px;
 .post{
     display: flex;
     flex-direction: row;
-    justify-content: wrap;
     width:100%;
     height:500px;
     background: white;
@@ -314,17 +315,35 @@ padding: 1px 0 1px;
 .post-info-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     width: 100%;
     height:100%;
 }
 
 .origin{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 5%;
     background-color: white;
 }
+
+.origin p{
+    background-color: white;
+}
+
+#join{
+    border-radius: 20px;
+    border-color: transparent;
+    background: #1484D6;
+    color: white;
+    width: 70px;
+    margin-left: 150px;
+    margin-top: 6px;
+
+}
+    
+
 
 .title{
     display: flex;
@@ -358,11 +377,27 @@ padding: 1px 0 1px;
 
 .actions{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 1px 3px;
+    right: 50px;
     width: 100%;
-    height: 5%;
+    height: 9%;
     background-color: white;
 }
+
+.actions button{
+    border: transparent;
+    padding: 0px 8px;
+}
+
+.actions button:hover{
+    background:#E8E8E8;
+}
+
+.actions button .fa-ellipsis-h:hover{
+    background:black;
+}
+
 
 .highlight-filters-section{
     display: flex;
@@ -404,7 +439,7 @@ padding: 1px 0 1px;
     border-color: transparent;
     align-items: center;
     justify-content: center;
-    background: #E5E6E7;
+    background: transparent;
     color: blue;
     font-weight: bold;
     display: flex;
@@ -661,6 +696,7 @@ padding: 1px 0 1px;
     background: #fff;
     border-radius: 12px;
     align-content: center;
+    z-index: 100
 }
   
 #close-modal{

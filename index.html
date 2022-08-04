@@ -39,7 +39,7 @@
     </nav>
 
     <main>
-        <section class="language-notification">¿Estás navegando en español? Échale un vistazo a
+        <section class="language-notification">¿Estás navegando en español? Échale un vistazo a&nbsp;&nbsp;
             <a href="https://www.reddit.com/es"> reddit.com/es</a>
             <i class="fa fa-times" aria-hidden="true" onclick="hideNotification()"></i>
         </section>
@@ -99,7 +99,7 @@
                             Más nuevos</button>
                         <button class="highlight-filter" onclick="onClickFilter(this)">
                             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                            Más votados</button>
+                            &nbsp;Más votados</button>
                     </div>
                     <button class="highlight-filter" onclick="onClickFilter(this)">
                         <i class="fa-solid fa-ellipsis">...</i>
@@ -121,30 +121,29 @@
                     </div>
 
                 </div>
+                
                 <div class="post">
                     <div class="votes"></div>
                     <div class='post-info-container'>
-                        <div class="origin">r/memexico - Publicado por 3DD</div>
-                        <div class="title">Título del post</div>
+                        <div class="origin">
+                            <button><i class="fa fa-globe" aria-hidden="true"></i></button>
+                            <p>r/memexico - Publicado por "Usuari@" hace $% horas</p>
+                            <button id="join">Unirse</button>
+
+                        </div>
+                        <div class="title">
+                            <button>Estoy haciendo una copia de reddit y te lo muestro</button>
+                        </div>
                         <div class="hyperlink">
-                            <button class="subreddit">Subreddit</button>
+                            <button class="subreddit">Etiqueta</button>
                         </div>
                         <div class="thumbnail"></div>
-                        <div class="actions"></div>
-                    </div>
-
-                </div>
-
-                <div class="post">
-                    <div class="votes"></div>
-                    <div class='post-info-container'>
-                        <div class="origin">r/memexico - Publicado por 3DD</div>
-                        <div class="title">Título del post</div>
-                        <div class="hyperlink">
-                            <button class="subreddit">Subreddit</button>
+                        <div class="actions">
+                            <button><i class="fa fa-comment-o" aria-hidden="true"></i>Comentarios:</button>
+                            <button><i class="fa fa-share" aria-hidden="true"></i>Compartir</button>
+                            <button><i class="fa fa-bookmark-o" aria-hidden="true"></i>Guardar</button>
+                            <button><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
                         </div>
-                        <div class="thumbnail"></div>
-                        <div class="actions"></div>
                     </div>
 
                 </div>
@@ -161,7 +160,7 @@
                         <div class="top-communities">
                             <h6>1</h6>
                             <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                            <i class="fa fa-reddit" aria-hidden="true"></i> r/Comunidad
+                            <i class="fa fa-reddit" aria-hidden="true"></i>r/Comunidad
                             <button>Unirse</button>
                         </div>
                         <div class="top-communities">
