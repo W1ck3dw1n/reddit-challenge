@@ -72,13 +72,17 @@ const getDataFromApi = async (api) => {     //funcion recurrente
   }
 };
 
-
+/*
+  //crear secuencia for para rellenar automaticamente los posts, for each, por cada objeto que traiga, crea un elemento
 const printInfoOfMrRobot = async () => {
   const information = await getDataFromApi(
     "https://mr-robot-express-api.herokuapp.com"
   );
-  const post = document.getElementsByClassName("post-info-container")[0];
+  const found = information.results.find((item)=>{ 
+    return item.id === 20})
 
+  const post = document.getElementsByClassName("post-info-container")[0];
+  
   // Creando elementos y dandoles clases
   const divOrigin = document.createElement("div");
   divOrigin.className = "origin";
@@ -108,16 +112,22 @@ const printInfoOfMrRobot = async () => {
   subredditButton.innerHTML = `Ver lista de episodios`;
   divHyperLink.target = "_blank"; //este abre una pestaña nueva
   divHyperLink.href = `${information[0].episodes.listSource}`;
-};
+};    */
+
+
 
 const printInfoOfRickAndMorty = async () => {
   const information = await getDataFromApi(
     "https://rickandmortyapi.com/api/episode"
       );
-    const found = information.results.find((item)=>{ 
-        return item.id === 5})
+
+      console.log(information, 'TwT');
   
-  const post = document.getElementsByClassName("post-info-container")[1];
+  
+    const found = information.results.find((item)=>{ 
+        return item.id === 20})
+  
+  const post = document.getElementsByClassName("post-info-container")[0];
 
   // Creando elementos y dandoles clases
   const divOrigin = document.createElement("div");
@@ -144,16 +154,18 @@ const printInfoOfRickAndMorty = async () => {
   // Insertando texto dentro de los elementos
   divOrigin.innerHTML = `${found.name}`; // string interpolation
   divTitle.innerHTML = `${found.episode}`;
-  divThumbnail.style.backgroundImage = `url(https://as01.epimg.net/epik/imagenes/2019/01/03/portada/1546504221_002420_1546506356_noticia_normal_recorte1.jpg)`;
+  divThumbnail.style.backgroundImage = `url("https://picsum.photos/200/300/?random=1")`;
   subredditButton.innerHTML = `Ver lista de episodios Rick & Morty`;
   divHyperLink.target = "_blank";
   divHyperLink.href = `${found.url}`;
+  divActions.innerHTML = `${found.created}`;
 };
 
 const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
    for(let i = 0; i <= randomImage.length-1; i++){
      randomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
+     randomImage[i].style.filter = "brightness(0.75)"
      console.log(i)
    }
 
@@ -164,12 +176,9 @@ const changeBackground = () => {
 
 const onClickFilter = (event) =>{
   console.log(event)
-
 }
 
-// TODO -> Sacar información de otra API y pintarlo en el segundo post.
-
 //isHiddenNotification();
-printInfoOfMrRobot();
+//printInfoOfMrRobot();
 printInfoOfRickAndMorty();
 changeBackground();
