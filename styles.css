@@ -6,7 +6,15 @@ font-family: 'Roboto', sans-serif;
 font-weight: bold;      /*en 1980X1080 se ve 20/20*/
 }
 
-main{
+@media screen and (max-width: 480px) {
+        main {
+        width: 50%;
+    display: none;
+    }
+  }
+
+
+main  {
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -312,10 +320,6 @@ padding: 1px 0 1px;
     background-color: #F8F9FA;
 }
 
-.votes:hover{
-    opacity: 50%;
-}
-
 .post-info-container{
     display: flex;
     flex-direction: column;
@@ -327,6 +331,8 @@ padding: 1px 0 1px;
 .origin{
     display: flex;
     flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 5%;
     background-color: white;
@@ -346,9 +352,9 @@ padding: 1px 0 1px;
     background: #1484D6;
     color: white;
     width: 70px;
-    margin: 6px 10px 4px 150px;
+    height: 20px;
+    margin: 6px 10px 0 150px;
 }
-    
 
 
 .title{
@@ -359,12 +365,17 @@ padding: 1px 0 1px;
     background-color: white;
 }
 
+.subreddit{
+    border: none;
+}
+
 .hyperlink{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 5%;
     background-color: white;
+    border: none;
 }
 
 .hyperlink:hover{
@@ -377,7 +388,7 @@ padding: 1px 0 1px;
     flex-direction: column;
     width: 100%;
     height: 85%;
-    background-size: 50% 100%;
+    background-size: 100% 100%;
 }
 
 .actions{

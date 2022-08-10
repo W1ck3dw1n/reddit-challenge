@@ -72,67 +72,31 @@ const getDataFromApi = async (api) => {     //funcion recurrente
   }
 };
 
-/*
-  //crear secuencia for para rellenar automaticamente los posts, for each, por cada objeto que traiga, crea un elemento
-const printInfoOfMrRobot = async () => {
-  const information = await getDataFromApi(
-    "https://mr-robot-express-api.herokuapp.com"
-  );
-  const found = information.results.find((item)=>{ 
-    return item.id === 20})
-
-  const post = document.getElementsByClassName("post-info-container")[0];
-  
-  // Creando elementos y dandoles clases
-  const divOrigin = document.createElement("div");
-  divOrigin.className = "origin";
-  const divTitle = document.createElement("div");
-  divTitle.className = "title";
-  const divHyperLink = document.createElement("a");
-  divHyperLink.className = "hyperlink";
-  const subredditButton = document.createElement("button");
-  subredditButton.className = "subreddit";
-  const divThumbnail = document.createElement("div");
-  divThumbnail.className = "thumbnail";
-  const divActions = document.createElement("div");
-  divActions.className = "actions";
-  // FIn de creacion de elementos
-  // Insertar elementos dentro del elemento padre (post)
-  post.appendChild(divOrigin);
-  post.appendChild(divTitle);
-  post.appendChild(divHyperLink);
-  divHyperLink.appendChild(subredditButton);
-  post.appendChild(divThumbnail);
-  post.appendChild(divActions);
-
-  // Insertando texto dentro de los elementos
-  divOrigin.innerHTML = `${information[0].name}`; // string interpolation
-  divTitle.innerHTML = `${information[0].description}`;
-  divThumbnail.style.backgroundImage = `url(${information[0].logo})`;
-  subredditButton.innerHTML = `Ver lista de episodios`;
-  divHyperLink.target = "_blank"; //este abre una pestaña nueva
-  divHyperLink.href = `${information[0].episodes.listSource}`;
-};    */
-
-
 
 const printInfoOfRickAndMorty = async () => {
   const information = await getDataFromApi(
     "https://rickandmortyapi.com/api/episode"
       );
+      console.log(information);
 
-      console.log(information, 'TwT');
-  
-  
-    const found = information.results.find((item)=>{ 
-        return item.id === 20})
-  
-  const post = document.getElementsByClassName("post-info-container")[0];
-
-  // Creando elementos y dandoles clases
-  const divOrigin = document.createElement("div");
+  const post = document.getElementById("post-container");
+    
+  information.results.forEach((item, index) => {
+  const divPost = document.createElement("div");
+  divPost.className = "post";  
+  const divVotes = document.createElement("div");
+  divVotes.className = "votes";
+  const divPostInfoContainer = document.createElement("div");
+  divPostInfoContainer.className = "post-info-container";
+  const divOrigin = document.createElement("div");  //primer div
   divOrigin.className = "origin";
-  const divTitle = document.createElement("div");
+  const globeButton = document.createElement("i");
+  globeButton.className = "fa fa-globe";
+  const Source = document.createElement("p");
+  Source.className = "source";
+  const joinButton = document.createElement("button");
+  joinButton.id = "join";
+  const divTitle = document.createElement("div");   //segundo div
   divTitle.className = "title";
   const divHyperLink = document.createElement("a");
   divHyperLink.className = "hyperlink";
@@ -140,26 +104,39 @@ const printInfoOfRickAndMorty = async () => {
   subredditButton.className = "subreddit";
   const divThumbnail = document.createElement("div");
   divThumbnail.className = "thumbnail";
-  const divActions = document.createElement("div");
+  const divActions = document.createElement("div"); //tercer div
   divActions.className = "actions";
+  const commentButton  = document.createElement("button");
+  commentButton.id = "join";
   // FIn de creacion de elementos
+  
   // Insertar elementos dentro del elemento padre (post)
-  post.appendChild(divOrigin);
-  post.appendChild(divTitle);
-  post.appendChild(divHyperLink);
+  post.appendChild(divPost);
+  divPost.appendChild(divVotes);
+  divPost.appendChild(divPostInfoContainer);
+  divPostInfoContainer.appendChild(divOrigin);
+  divOrigin.appendChild(globeButton);
+  divOrigin.appendChild(Source);
+  divOrigin.appendChild(joinButton);
+  divPostInfoContainer.appendChild(divTitle);
+  divPostInfoContainer.appendChild(divHyperLink);
   divHyperLink.appendChild(subredditButton);
-  post.appendChild(divThumbnail);
-  post.appendChild(divActions);
-
+  divPostInfoContainer.appendChild(divThumbnail);
+  divPostInfoContainer.appendChild(divActions);
+  
   // Insertando texto dentro de los elementos
-  divOrigin.innerHTML = `${found.name}`; // string interpolation
-  divTitle.innerHTML = `${found.episode}`;
-  divThumbnail.style.backgroundImage = `url("https://picsum.photos/200/300/?random=1")`;
+  Source.innerHTML = ``; 
+  Source.innerHTML = `${item.episode}`; // string interpolation
+  joinButton.innerHTML = `Unirse`;
+  divTitle.innerHTML = `${item.name}`;
+  divThumbnail.style.backgroundImage = `url("https://picsum.photos/800/800/?random=${index}")`;
   subredditButton.innerHTML = `Ver lista de episodios Rick & Morty`;
   divHyperLink.target = "_blank";
-  divHyperLink.href = `${found.url}`;
-  divActions.innerHTML = `${found.created}`;
+  divHyperLink.href = `${item.url}`;
+  divActions.innerHTML = `${item.created}`;
+});
 };
+
 
 const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
@@ -173,6 +150,7 @@ const changeBackground = () => {
     "language-notification"
   )[0];
 }
+
 
 const onClickFilter = (event) =>{
   console.log(event)
