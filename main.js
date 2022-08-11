@@ -8,6 +8,7 @@ const hideNotification = () => {      //Siempre trabajando en otra branch
   localStorage.setItem("hideNotification", true);
 };
 
+
 const isHiddenNotification = () => {
   const isHidden = localStorage.getItem("hideNotification");
   if (isHidden) {
@@ -19,6 +20,7 @@ const isHiddenNotification = () => {
     notification.style.display = "none";
   }
 };
+
 
 const onClickLogin = async () => {
   // llamar al elemento modal
@@ -35,6 +37,7 @@ const onClickLogin = async () => {
   modal.style.display = "block";
 };
 
+
 const closeModal = () => {
   //llamar al elemento modal
   const modal = document.getElementById("modal");
@@ -49,6 +52,7 @@ const closeModal = () => {
   
 };
 
+
 // TODO estudiar el then y catch :v segunda opcion, luego fue try y catch
 const getMrRobotSeasons2 = () => {
   const result = fetch("https://mr-robot-express-api.herokuapp.com/seasons")
@@ -61,6 +65,7 @@ const getMrRobotSeasons2 = () => {
 
   return result;
 };
+
 
 const getDataFromApi = async (api) => {     //funcion recurrente
   try {
@@ -110,6 +115,7 @@ const printInfoOfMrRobot = async () => {
   divHyperLink.href = `${information[0].episodes.listSource}`;
 };
 
+
 const printInfoOfRickAndMorty = async () => {
   const information = await getDataFromApi(
     "https://rickandmortyapi.com/api/episode"
@@ -149,6 +155,7 @@ const printInfoOfRickAndMorty = async () => {
   divHyperLink.target = "_blank";
   divHyperLink.href = `${found.url}`;
 };
+
 
 const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
