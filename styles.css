@@ -6,7 +6,8 @@ font-family: 'Roboto', sans-serif;
 font-weight: bold;      /*en 1980X1080 se ve 20/20*/
 }
 
-main{
+
+main  {
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -64,9 +65,9 @@ h4{
 }
 
 .input-container{
-    margin: 2px 0px 2px 120px;
+    margin: 2px 0px 2px 125px;
     border-radius: 2px;
- 
+    position: relative;
 }
 
 #magn{
@@ -77,14 +78,22 @@ h4{
 
 .search{
     background-color: #f6f7f8;
-    width: 550px;
-    height: 30%;
+    width: 555px;
+    height: 28%;
     padding: 12px 50px;
     margin: 3px 0 0 90px;
     position: relative;
     border-color: rgb(240, 236, 236);
     border-radius: 4px;
     border:.5px solid rgb(241, 236, 236);            
+}
+
+.search-icon{
+    position: absolute;
+    bottom: 32px;
+    background: transparent;
+    left: 110px;  
+    font-size: 20px;
 }
 
 .buscador:hover{
@@ -179,7 +188,7 @@ padding: 1px 0 1px;
 }
 
 .trending-today{
-    width: 95%;
+    width: 97%;
     height: 240px;
     background: transparent;
     padding: 0 1px 12px 0;
@@ -194,22 +203,18 @@ padding: 1px 0 1px;
     height:100%;
     display:flex;
     flex-direction:row;
-    justify-content: space-between;
-    padding:0 0 10px 0;
-    
+    justify-content: space-around;
 }
 
 .news{
     height:180px;
     width: 240px;
-    /*background-image: url("https://picsum.photos/80/100/?random=4"); */
-    background-size: 100% 100%;
+    background-size: 100% 100%; 
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace white;
     position: relative;
     top: 10px;
     background: black;
-
 }
 
 .news h4{
@@ -290,7 +295,7 @@ padding: 1px 0 1px;
     height:500px;
     background: white;
     text-align: center;
-    margin: 20px 0px;
+    margin: 8px 0px;
     border:1px solid #CCCCCC;
     border-radius: 2px;
     
@@ -309,10 +314,6 @@ padding: 1px 0 1px;
     background-color: #F8F9FA;
 }
 
-.votes:hover{
-    opacity: 50%;
-}
-
 .post-info-container{
     display: flex;
     flex-direction: column;
@@ -324,10 +325,16 @@ padding: 1px 0 1px;
 .origin{
     display: flex;
     flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 5%;
     background-color: white;
     justify-content: space-between;
+}
+
+.fa-globe{
+    margin: 8px 0 0 8px;
 }
 
 .source button{
@@ -344,20 +351,25 @@ padding: 1px 0 1px;
     background: transparent;
 }
 
+.origin button{
+    border:none;
+}
+
 #join{
     border-radius: 20px;
     border-color: transparent;
     background: #1484D6;
     color: white;
     width: 70px;
-    margin: 2px 10px 0px 100px;
+    margin: 8px 10px 0px 10px;
 }
     
+
 .title{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    height: 5%;
+    height: 10%;
     background-color: white;
 }
 
@@ -365,14 +377,22 @@ padding: 1px 0 1px;
     display: flex;
     border: transparent;
     font-size: 16px;
+    color: white;
 }
+
+.postTitle{
+    display: flex;
+    background: transparent;
+}
+    
 
 .hyperlink{
     display: flex;
     flex-direction: column;
-    width: 100px;
+    width: 100%;
     height: 5%;
     background-color: white;
+    border: none;
 }
 
 .hyperlink:hover{
@@ -380,18 +400,25 @@ padding: 1px 0 1px;
 }
 
 .subreddit{
-    border-radius: 40px;
-    background: orange;
+    background: transparent;
     border: transparent;
 }
 
+.tag{
+    background: green;
+    border-radius: 20px;
+    width: 100px;
+    height: 20px;
+    justify-content: center;
+    align-content: center;
+}
 
 .thumbnail{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 85%;
-    background-image: url("./oraq.jpg");
+    height: 78%;
+    /*background-image: url("./oraq.jpg");*/
     background-size: 100% 100%;
 }
 
@@ -400,8 +427,9 @@ padding: 1px 0 1px;
     flex-direction: row;
     right: 50px;
     width: 100%;
-    height: 9%;
+    height: 7%;
     background-color: white;
+    align-items: center;
 }
 
 .actions-buttons{
@@ -409,16 +437,26 @@ padding: 1px 0 1px;
     display: flex;
     flex-direction: row;
     padding: 1px 3px;
-    background-color: white;
+    background-color: black;
 }
 
 .actions button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: transparent;
     padding: 0px 8px;
+    width: 15%;
+    height: 100%;
+    right: 50px;
 }
 
 .actions button:hover{
     background:#E8E8E8;
+}
+
+.comment{
+    background: black;
 }
 
 
@@ -435,6 +473,7 @@ padding: 1px 0 1px;
     width:100%;
     background: #FFF;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 .highlight-sorter{

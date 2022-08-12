@@ -21,12 +21,12 @@
                 <img class="icon" src="./reddit-logo.png"> </img>
             </a>
 
-            <div class="input-container">
-                <input type="text" class="search" placeholder="Buscar en Reddit">
-                <div class="search-icon">
-                    <i class="fa fa-search" id="magn" aria-hidden="true"></i>
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Buscar en Reddit">
+                    <div class="search-icon">
+                        <i class="fa fa-search" id="magn" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
         </div>
 
         <div class="session">
@@ -91,7 +91,7 @@
                             <i class="fa fa-reddit" aria-hidden="true"></i>
                             Destacando</button>
                         <button class="highlight-filter" id="down" onclick="onClickFilter(this)">
-                            <i class="fa fa-angle-down"  aria-hidden="true"></i>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
                             México</button>
                         <button class="highlight-filter" onclick="onClickFilter(this)">
 
@@ -109,25 +109,26 @@
                     </button>
                 </div>
 
-                <div class="post">
-                    <div class="votes"></div>
-                    <div class='post-info-container'>
-                    </div>
-                </div>
 
-                <div class="post">
-                    <div class="votes"></div>
-                    <div class='post-info-container'>
+                <div id="post-container">
+
                     </div>
 
-                </div>
-                
+         
                 <div class="post">
-                    <div class="votes"></div>
+                    <div class="votes">
+                            <button aria-label="Upvote" aria-pressed="false" class="voteButton " data-click-id="upvote"><i class="icon icon-upvote _2Jxk822qXs4DaXwsN7yyHA"></i></button>
+                            <div class="total-votes">666</div>
+                            <button aria-label="Downvote" aria-pressed="false" class="voteButton" data-click-id="downvote"><i class="icon icon-downvote ZyxIIl4FP5gHGrJDzNpUC"></i></button>
+                    </div>
+
+
                     <div class='post-info-container'>
                         <div class="origin">
+
                         <div class="source">
                             <button><i class="fa fa-globe" aria-hidden="true"></i></button>
+
                             <p>r/memexico - Publicado por "Usuari@" hace $% horas</p>
                         </div>
                             <button id="join">Unirse</button>
@@ -141,19 +142,21 @@
                         </div>
                         <div class="thumbnail"></div>
                         <div class="actions">
+
                             <div class="actions-buttons">
                             <button><i class="fa fa-comment-o" aria-hidden="true"></i>Comentarios:</button>
                             <button><i class="fa fa-share" aria-hidden="true"></i>Compartir</button>
                             <button><i class="fa fa-bookmark-o" aria-hidden="true"></i>Guardar</button>
                             <button><i class="fa fa-ellipsis-h" id="more"aria-hidden="true"></i></button>
                             </div>
+                            
                         </div>
                     </div>
 
-                </div>
+                </div> 
 
             </div>
-
+            
             <div class="right-section">
                 <div class="trending-communities">
                     <div class="top-community">

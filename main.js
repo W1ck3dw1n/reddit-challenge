@@ -78,82 +78,96 @@ const getDataFromApi = async (api) => {     //funcion recurrente
 };
 
 
-const printInfoOfMrRobot = async () => {
-  const information = await getDataFromApi(
-    "https://mr-robot-express-api.herokuapp.com"
-  );
-  const post = document.getElementsByClassName("post-info-container")[0];
-
-  // Creando elementos y dandoles clases
-  const divOrigin = document.createElement("div");
-  divOrigin.className = "origin";
-  const divTitle = document.createElement("div");
-  divTitle.className = "title";
-  const divHyperLink = document.createElement("a");
-  divHyperLink.className = "hyperlink";
-  const subredditButton = document.createElement("button");
-  subredditButton.className = "subreddit";
-  const divThumbnail = document.createElement("div");
-  divThumbnail.className = "thumbnail";
-  const divActions = document.createElement("div");
-  divActions.className = "actions";
-  // FIn de creacion de elementos
-  // Insertar elementos dentro del elemento padre (post)
-  post.appendChild(divOrigin);
-  post.appendChild(divTitle);
-  post.appendChild(divHyperLink);
-  divHyperLink.appendChild(subredditButton);
-  post.appendChild(divThumbnail);
-  post.appendChild(divActions);
-
-  // Insertando texto dentro de los elementos
-  divOrigin.innerHTML = `${information[0].name}`; // string interpolation
-  divTitle.innerHTML = `${information[0].description}`;
-  divThumbnail.style.backgroundImage = `url(${information[0].logo})`;
-  subredditButton.innerHTML = `Ver lista de episodios`;
-  divHyperLink.target = "_blank"; //este abre una pestaña nueva
-  divHyperLink.href = `${information[0].episodes.listSource}`;
-};
-
-
 const printInfoOfRickAndMorty = async () => {
   const information = await getDataFromApi(
     "https://rickandmortyapi.com/api/episode"
       );
-    const found = information.results.find((item)=>{ 
-        return item.id === 5})
-  
-  const post = document.getElementsByClassName("post-info-container")[1];
+      console.log(information);
 
-  // Creando elementos y dandoles clases
-  const divOrigin = document.createElement("div");
+  const post = document.getElementById("post-container");
+    
+  information.results.forEach((item, index) => {
+
+  const divPost = document.createElement("div");  //div completo
+  divPost.className = "post";  
+  const divVotes = document.createElement("div");
+  divVotes.className = "votes";
+  const divPostInfoContainer = document.createElement("div"); //div que contiene todas las filas del post
+  divPostInfoContainer.className = "post-info-container";
+  const divOrigin = document.createElement("div");  //primer div
   divOrigin.className = "origin";
-  const divTitle = document.createElement("div");
+  const globeButton = document.createElement("i");
+  globeButton.className = "fa fa-globe";
+  const subreddit = document.createElement("a");
+  subreddit.className = "subreddit";
+  const Date = document.createElement("p");
+  Date.className = "source";
+  const joinButton = document.createElement("button");
+  joinButton.id = "join";
+  const divTitle = document.createElement("div");   //segundo div
   divTitle.className = "title";
-  const divHyperLink = document.createElement("a");
-  divHyperLink.className = "hyperlink";
-  const subredditButton = document.createElement("button");
-  subredditButton.className = "subreddit";
-  const divThumbnail = document.createElement("div");
+  const postTitle = document.createElement("p");
+  postTitle.className = "postTitle";
+  const divHyperLink = document.createElement("button");
+  divHyperLink.className = "tag";
+  const divThumbnail = document.createElement("div"); //tercer div
   divThumbnail.className = "thumbnail";
-  const divActions = document.createElement("div");
+  const divActions = document.createElement("div"); //cuarto div
   divActions.className = "actions";
+  const commentButton  = document.createElement("button");
+  commentButton.className = "actions button";
+  const commentIcon = document.createElement("i");
+  commentIcon.className = "fa fa-comment-o";
+  const shareButton  = document.createElement("button");
+  shareButton.className = "actions button";
+  const shareIcon = document.createElement("i");
+  shareIcon.className = "fa fa-share";
+  const saveButton  = document.createElement("button");
+  saveButton.className = "actions button";
+  const saveIcon = document.createElement("i");
+  saveIcon.className = "fa fa-bookmark-o";
+  const moreButton  = document.createElement("button");
+  moreButton.className = "actions button";
+  const moreIcon = document.createElement("i");
+  moreIcon.className = "fa fa-ellipsis-h";
   // FIn de creacion de elementos
+  
   // Insertar elementos dentro del elemento padre (post)
-  post.appendChild(divOrigin);
-  post.appendChild(divTitle);
-  post.appendChild(divHyperLink);
-  divHyperLink.appendChild(subredditButton);
-  post.appendChild(divThumbnail);
-  post.appendChild(divActions);
-
+  post.appendChild(divPost);
+  divPost.appendChild(divVotes);
+  divPost.appendChild(divPostInfoContainer);
+  divPostInfoContainer.appendChild(divOrigin);
+  divOrigin.appendChild(globeButton);
+  divOrigin.appendChild(subreddit);
+  divOrigin.appendChild(Date);
+  divOrigin.appendChild(joinButton);
+  divPostInfoContainer.appendChild(divTitle);
+  divTitle.appendChild(postTitle);
+  divTitle.appendChild(divHyperLink);
+  divPostInfoContainer.appendChild(divThumbnail);
+  divPostInfoContainer.appendChild(divActions);
+  divActions.appendChild(commentButton);
+  commentButton.appendChild(commentIcon);
+  divActions.appendChild(shareButton);
+  shareButton.appendChild(shareIcon);
+  divActions.appendChild(saveButton);
+  saveButton.appendChild(saveIcon);
+  divActions.appendChild(moreButton);
+  moreButton.appendChild(moreIcon);
+  
+  
   // Insertando texto dentro de los elementos
-  divOrigin.innerHTML = `${found.name}`; // string interpolation
-  divTitle.innerHTML = `${found.episode}`;
-  divThumbnail.style.backgroundImage = `url(https://as01.epimg.net/epik/imagenes/2019/01/03/portada/1546504221_002420_1546506356_noticia_normal_recorte1.jpg)`;
-  subredditButton.innerHTML = `Ver lista de episodios Rick & Morty`;
-  divHyperLink.target = "_blank";
-  divHyperLink.href = `${found.url}`;
+  //Origin.innerHTML = ``; 
+  subreddit.innerHTML = `${item.name}`; // string interpolation
+  Date.innerHTML = `Publicado: ${item.air_date}`; // string interpolation
+  joinButton.innerHTML = `Unirse`;
+  postTitle.innerHTML = `${item.created}`;
+  //postTitle.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis id dolorum doloribus tempora aspernatur esse nisi, ducimus sint.`;
+  divHyperLink.innerHTML = `${item.episode}`;
+  divHyperLink.target = "_blank"; //abre una pestaña nueva
+  divThumbnail.style.backgroundImage = `url("https://picsum.photos/800/800/?random=${index}")`;
+  //commentButton.innerText = `Comentarios:`;
+});
 };
 
 
@@ -161,6 +175,7 @@ const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
    for(let i = 0; i <= randomImage.length-1; i++){
      randomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
+     randomImage[i].style.filter = "brightness(0.75)"
      console.log(i)
    }
 
@@ -169,14 +184,11 @@ const changeBackground = () => {
   )[0];
 }
 
+
 const onClickFilter = (event) =>{
   console.log(event)
-
 }
 
-// TODO -> Sacar información de otra API y pintarlo en el segundo post.
-
 //isHiddenNotification();
-printInfoOfMrRobot();
 printInfoOfRickAndMorty();
 changeBackground();
