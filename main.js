@@ -1,4 +1,8 @@
-const hideNotification = () => {      //Siempre trabajando en otra branch
+
+//view's scripts
+
+
+const hideNotification = () => {      
   // llamar a elemento 'language-notification' del Dom
   const notification = document.getElementsByClassName(
     "language-notification"
@@ -7,6 +11,7 @@ const hideNotification = () => {      //Siempre trabajando en otra branch
   notification.style.display = "none";
   localStorage.setItem("hideNotification", true);
 };
+
 
 
 const isHiddenNotification = () => {
@@ -21,6 +26,34 @@ const isHiddenNotification = () => {
   }
 };
 
+function cardView (){
+  const postSection = document.getElementById("post-container");
+   postSection.style.visibility = buttonDisplay ? "hidden" : "visible";
+    buttonDisplay =! buttonDisplay;
+   // printInfoOfRickAndMorty();
+  }
+  
+mybutton = document.getElementById("toTop");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 560 || document.documentElement.scrollTop > 560) {  //cantidad de pixeles para que aparezca
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.documentElement.scrollTop = 0; 
+}
+
+
+
+
+
+//component's scripts
 
 const onClickLogin = async () => {
   // llamar al elemento modal
@@ -38,6 +71,7 @@ const onClickLogin = async () => {
 };
 
 
+
 const closeModal = () => {
   //llamar al elemento modal
   const modal = document.getElementById("modal");
@@ -53,19 +87,10 @@ const closeModal = () => {
 };
 
 
-// TODO estudiar el then y catch :v segunda opcion, luego fue try y catch
-const getMrRobotSeasons2 = () => {
-  const result = fetch("https://mr-robot-express-api.herokuapp.com/seasons")
-    .then((response) => {
-      response.json().then((result) => {
-        console.log(result);
-      });
-    })
-    .catch((error) => console.log(error));
 
-  return result;
-};
 
+
+//API related scripts
 
 const getDataFromApi = async (api) => {     //funcion recurrente
   try {
@@ -80,12 +105,11 @@ const getDataFromApi = async (api) => {     //funcion recurrente
 
 const printInfoOfRickAndMorty = async () => {
   const information = await getDataFromApi(
-    "https://rickandmortyapi.com/api/episode"
-      );
-      console.log(information);
-
+    "https://rickandmortyapi.com/api/episode");
+      console.log(information); //view content of Api's Array
+  
   const post = document.getElementById("post-container");
-    
+   
   information.results.forEach((item, index) => {
 
   const divPost = document.createElement("div");  //div completo
@@ -171,12 +195,12 @@ const printInfoOfRickAndMorty = async () => {
 };
 
 
+
 const changeBackground = () => {
   const randomImage = document.getElementsByClassName("news")
    for(let i = 0; i <= randomImage.length-1; i++){
      randomImage[i].style.backgroundImage = `url("https://picsum.photos/200/300/?random=${i}")`
      randomImage[i].style.filter = "brightness(0.75)"
-     console.log(i)
    }
 
   const notification = document.getElementsByClassName(
@@ -185,9 +209,48 @@ const changeBackground = () => {
 }
 
 
-const onClickFilter = (event) =>{
-  console.log(event)
+
+
+
+const featured = document.getElementById("featured");
+const country = document.getElementById("country");
+const newest = document.getElementById("newest");
+const mostVoted = document.getElementById("mostVoted");
+const onRise = document.getElementById("onRise");
+const viewSelector = document.getElementById("viewSelector");
+
+featured.addEventListener('click', toggleButtonStyles);
+country.addEventListener('click', toggleButtonStyles);
+newest.addEventListener('click', toggleButtonStyles);
+mostVoted.addEventListener('click', toggleButtonStyles);
+onRise.addEventListener('click', toggleButtonStyles);
+viewSelector.addEventListener('click', toggleButtonStyles);
+
+/*la funcion debe hacer esto en este orden:
+1 - alterar el estado de las cosas dependiendo del boton que se haya presionado
+
+Pero ahora entiendo que no tendria que ser funcion, si no constante, porque esto no se puede reutilizar
+para algo mas
+*/
+function toggleButtonStyles() {
+  this.classList.toggle('active');
+  console.log('oira');
+    if (featured.classList.contains('active')){
+      country.classList.add('active');
+      newest.classList.remove('active');
+      mostVoted.classList.remove('active');
+      onRise.classList.remove('active');
+      viewSelector.classList.remove('active');
+  } else if (newest.classList.contains('active')){
+    console.log('oira2');
+    featured.classList.remove('active');
+    country.classList.add('active');
+    mostVoted.classList.remove('active');
+    onRise.classList.remove('active');
+    viewSelector.classList.remove('active');
+  }
 }
+
 
 //isHiddenNotification();
 printInfoOfRickAndMorty();

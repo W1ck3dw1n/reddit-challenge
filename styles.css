@@ -3,7 +3,7 @@ padding: 0;
 margin: 0;
 background: #DAE0E6;
 font-family: 'Roboto', sans-serif;
-font-weight: bold;      /*en 1980X1080 se ve 20/20*/
+font-weight: bold;     
 }
 
 
@@ -11,8 +11,8 @@ main  {
     display:flex;
     flex-direction:column;
     align-items: center;
-    padding: 48px 15%; /*necesario aprender una mejor forma de manejar resolución, responsivo? v: */
-    width: 70%;    /*igual acá, en 1980x1080 según yo*/
+    padding: 48px 23%; /*necesario aprender una mejor forma de manejar resolución, responsivo? */
+    width: 55%;    /*1920 x 1080 es 23% padding y 55%, */ 
 }
 
 a{
@@ -32,7 +32,7 @@ h4{
     align-content: center;
 }
     
-/*primera sección*/
+/*primera sección */
 
 .topnav{
     position:fixed;
@@ -78,14 +78,14 @@ h4{
 
 .search{
     background-color: #f6f7f8;
-    width: 555px;
+    width: 550px;
     height: 28%;
     padding: 12px 50px;
-    margin: 3px 0 0 90px;
+    margin: 2px 0 0 90px;
     position: relative;
     border-color: rgb(240, 236, 236);
     border-radius: 4px;
-    border:.5px solid rgb(241, 236, 236);            
+    border:1px solid rgb(241, 236, 236);            
 }
 
 .search-icon{
@@ -159,12 +159,12 @@ padding: 1px 0 1px;
 /*segunda sección*/
 
 .language-notification{
-    width:95%;
+    width: 100%;
     height: 50px;
     background: white;
     text-align: center;
     justify-content: space-between;
-    margin:20px 0;
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,6 +179,7 @@ padding: 1px 0 1px;
     right:20px;
     cursor:pointer;
     background: transparent;
+    transform: scale(2);
 }
 
 .fa{
@@ -476,14 +477,14 @@ padding: 1px 0 1px;
     margin-bottom: 10px;
 }
 
-.highlight-sorter{
+.highlightSorter{
     width:80%;
     display: flex;
     justify-content: space-between;
     background: white;
 }
 
-.highlight-sorter .highlight-filter{
+.highlightSorter .highlightFilter{
     width:25%;
     height: 30px;
     border-radius: 20px;
@@ -491,15 +492,14 @@ padding: 1px 0 1px;
     border-color: transparent;
     align-items: center;
     justify-content: center;
-    background: #F6F7F8;
-    color: blue;
+    background: transparent;
     font-weight: bold;
     display: flex;
     flex-direction: row;
 }
 
 
-.highlight-filter{
+.highlightFilter{
     width: 5%;
     height: 30px;
     border-radius: 20px;
@@ -507,13 +507,13 @@ padding: 1px 0 1px;
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: blue;
     font-weight: bold;
     display: flex;
     flex-direction: row;
 }
 
-#down {
+
+#country {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -521,11 +521,47 @@ padding: 1px 0 1px;
     margin-left: 15px;
 }
 
-.highlight-filter:hover{
+.dropdown{
+    position: relative;
+    display: inline-block;
+    background: transparent;
+}
+
+.dropdown:hover .viewOptions{
+    display: block;
+}
+
+#viewSelector{
+   width: 100%;
+}
+   
+
+.viewOptions{
+    display: none;
+    position: absolute;
+    border-radius: 10px;    
+    background: white;
+    z-index: 1;
+}
+
+.viewButton{
+    color: #A4A4A4;
+    display: flex;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+}
+
+.viewButton:hover{
+    background: #E9F5FD;
+    color: black;
+}
+
+
+.highlightFilter:hover{
     background-color: #EDEDED;
     font-weight: bold;
-    opacity: 70%;
-    color: blue;
+    opacity: 90%;
 }
 
 /*Derecha*/
@@ -542,19 +578,11 @@ padding: 1px 0 1px;
     flex-direction: column;
     margin:10px 10px 10px 20px;
     width: 90%;
-    height: 410px;
+    height: 440px;
     background:white;
     position: relative;
 }
 
-/*
-     <div class="trending-communities">
-                    <div class="top-community"></div>
-                    <div class="top-ranked"></div>
-                    <div class="view-all"></div>
-                    <div class="trending-communities-filters"></div>
-                </div>
-*/
 .top-ranked{
     display: flex;
     flex-direction: column;
@@ -572,6 +600,11 @@ padding: 1px 0 1px;
     background-size: 100% 100%;
     background: url("https://picsum.photos/310/80?random=2");
 
+}
+
+.fa-chevron-up{
+  color: #60D877;
+  transform: scale(0.8);
 }
 
 .top-communities{
@@ -602,8 +635,9 @@ padding: 1px 0 1px;
     border-radius: 40px;
 }
 
-.trending-communities.top-community.top-ranked.top-communities h6{
-    left:30px;  
+.top-ranked .top-communities h6{
+    left:30px; 
+    background: transparent; 
 }
 
 .top-community h4{
@@ -710,6 +744,7 @@ padding: 1px 0 1px;
 
 .premium-elements h6{
     background: transparent;
+    font-size: 100%;
 }
 
 
@@ -769,4 +804,37 @@ padding: 1px 0 1px;
 #close-modal{
     margin-top: 20px;
     font-size: 24px;
+}
+
+#toTop {
+    display: none;
+    position: fixed; 
+    bottom: 10px;
+    right: 350px; 
+    z-index: 99;
+    border: none;
+    outline: none; 
+    background-color: #248BD9;
+    color: white;
+    cursor: pointer; 
+    border-radius: 40px; 
+    font-size: 14px; 
+    font-weight: 900;
+    width: 130px;
+    height: 40px;
+}
+  
+  #toTop:hover {
+    /* background-color: #555; /* Add a dark-grey background on hover */
+    opacity: 90%;
+  }
+
+  /*Estilos scripteados*/
+
+.active{
+    opacity: .90;
+    color: blue;
+    background: #D3D4D5;
+    font-family: Arial;
+    font-weight: bold;
 }
